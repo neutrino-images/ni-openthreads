@@ -64,10 +64,16 @@ ELSE (DYNAMIC_OPENTHREADS)
     SET(OPENTHREADS_USER_DEFINED_DYNAMIC_OR_STATIC "STATIC")
 ENDIF(DYNAMIC_OPENTHREADS)
 
+option(BUILD_SAMPLES "Set to ON to build the samples." ON)
+
 # Use our modified version of FindThreads.cmake which has Sproc hacks.
 FIND_PACKAGE(Threads)
 
-SUBDIRS(src/OpenThreads examples)
+add_subdirectory(src/OpenThreads)
+
+if (BUILD_SAMPLES)
+    add_subdirectory(examples)
+endif ()
 
 # FIXME: Make optional install test programs
 # FIXME: /bin directory not correct for Windows
