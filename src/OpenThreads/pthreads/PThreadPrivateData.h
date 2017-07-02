@@ -41,7 +41,19 @@ class PThreadPrivateData {
 
 private:
 
-    PThreadPrivateData() {};
+    PThreadPrivateData()
+    {
+        stackSize = 0;
+        stackSizeLocked = false;
+        idSet = false;
+        setRunning(false);
+        isCanceled = false;
+        tid = 0;
+        uniqueId = nextId;
+        nextId++;
+        threadPriority = Thread::THREAD_PRIORITY_DEFAULT;
+        threadPolicy = Thread::THREAD_SCHEDULE_DEFAULT;
+    };
 
     virtual ~PThreadPrivateData() {};
 
@@ -68,8 +80,7 @@ private:
 
     volatile int uniqueId;
 
-    volatile int cpunum;
-
+    Affinity affinity;
 
     static int nextId;
 
