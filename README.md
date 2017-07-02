@@ -1,10 +1,9 @@
 # OpenThreads
 
-*Note:
-
 This is a fork of https://github.com/tibogens/OpenThreads/commits/master to
-provide a simple way for building only the OpenThreads library. It is randomly 
-aligned to upstream: https://github.com/openscenegraph/OpenSceneGraph.
+provide a simple way for building only the OpenThreads library.
+
+It is randomly aligned to upstream: https://github.com/openscenegraph/OpenSceneGraph.
 
 USE AT YOUR OWN RISK!
 
@@ -28,4 +27,3 @@ at concrete data structures, but give a uniform interface to the dso.
 
 - The Open Thread Group
 - NI Team
-
